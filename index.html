@@ -16,8 +16,10 @@
     <title>Mini Canva</title>
   </head>
   <body>
-    <div class="flex items-start justify-between w-3/4 mx-auto mt-10">
-      <form style="width: 440px">
+    <div
+      class="flex items-start flex-col md:flex-row md:justify-between w-3/4 mx-auto mt-10"
+    >
+      <form class="mx-auto w-full" style="max-width: 400px">
         <h1 class="text-6xl mb-8 text-slate-700">Create Poster</h1>
         <label class="block my-4">
           <span
@@ -168,7 +170,7 @@
         </button>
       </form>
 
-      <div class="m-4 shadow-2xl rounded-2xl">
+      <div class="md:m-4 mt-4 md:mt-20 shadow-2xl rounded-2xl mx-auto">
         <div
           id="capture"
           style="

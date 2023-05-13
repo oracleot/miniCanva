@@ -16,14 +16,14 @@
     <title>Mini Canva</title>
   </head>
   <body>
-    <div class="flex items-start justify-between w-3/4 mx-auto mt-10">
+    <div class="flex items-center gap-2 justify-between w-3/4 mx-auto mt-10">
       <form style="width: 440px">
         <h1 class="text-6xl mb-8 text-sky-700 font-black">Mini Canva</h1>
-        <label class="block my-4">
+        <label class="block my-4 event-name">
           <span
             class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-500"
           >
-            Event
+            Event Name
           </span>
           <input
             name="theme"
@@ -31,12 +31,15 @@
             class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
             value="Women's Programme:"
           />
+          <span class="text-sky-600 text-xs">
+            <b>Hint:</b> <i>Maximum of 36 characters</i>
+          </span>
         </label>
-        <label class="block my-4">
+        <label class="block my-4 event-theme">
           <span
             class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-500"
           >
-            Theme
+            Event Theme
           </span>
           <input
             name="title"
@@ -44,12 +47,15 @@
             class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
             value="The Virtuous Woman"
           />
+          <span class="text-sky-600 text-xs">
+            <b>Hint:</b> <i>Maximum of 44 characters</i>
+          </span>
         </label>
-        <label class="block my-4">
+        <label class="block my-4 event-speaker">
           <span
             class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-500"
           >
-            Speaker
+            Speaker(s)
           </span>
           <input
             name="speaker"
@@ -57,8 +63,11 @@
             class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
             value="Pastor Kassim Adebambo"
           />
+          <span class="text-sky-600 text-xs">
+            <b>Hint:</b> <i>Maximum of 36 characters</i>
+          </span>
         </label>
-        <label class="block my-4">
+        <label class="block my-4 event-date">
           <span
             class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-500"
           >
@@ -70,8 +79,11 @@
             class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
             value="February 19, 2023"
           />
+          <span class="text-sky-600 text-xs">
+            <b>Hint:</b> <i>Maximum of 18 characters</i>
+          </span>
         </label>
-        <label class="block my-4">
+        <label class="block my-4 event-time">
           <span
             class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-500"
           >
@@ -83,8 +95,39 @@
             class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
             value="11:00am - 2:00pm"
           />
+          <span class="text-sky-600 text-xs">
+            <b>Hint:</b> <i>Maximum of 16 characters</i>
+          </span>
         </label>
-        <label class="block my-4">
+        <label class="block my-4 event-venue">
+          <span class="block text-sm font-medium text-slate-500">
+            Venue (optional)
+          </span>
+          <input
+            name="venue"
+            id="venue"
+            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+            value="RCCG MorningStar"
+          />
+          <span class="text-sky-600 text-xs">
+            <b>Hint:</b> <i>Maximum of 20 characters</i>
+          </span>
+        </label>
+        <label class="block my-4 event-address">
+          <span class="block text-sm font-medium text-slate-500">
+            Address (optional)
+          </span>
+          <input
+            name="address"
+            id="address"
+            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+            value="280 Lanark Road West, EH14 5RU"
+          />
+          <span class="text-sky-600 text-xs">
+            <b>Hint:</b> <i>Maximum of 40 characters</i>
+          </span>
+        </label>
+        <label class="block my-4 event-registration-link">
           <span class="block text-sm font-medium text-slate-500">
             Registration Link (optional)
           </span>
@@ -94,39 +137,21 @@
             class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
             value="bit.ly/3XRTs"
           />
-          <span class="block text-sm font-medium text-blue-500 italic"
-            >Shorten your link using this
-            <a
-              target="_blank"
-              href="https://www.youtube.com/watch?v=emnz3xCV29o&t=136s&pp=ygUhc2hvcnRlbiB5b3VyIHVybCB1c2luZyBiaXRseSBsaW5r"
-              class="text-sky-700"
-              ><u>tutorial</u></a
-            ></span
-          >
-        </label>
-        <label class="block my-4">
-          <span class="block text-sm font-medium text-slate-500">
-            Event Venue (optional)
+          <span class="text-sky-600 text-xs">
+            <b>Hint:</b>
+            <i>
+              Maximum of 18 characters. Shorten your link using this
+              <a
+                target="_blank"
+                href="https://www.youtube.com/watch?v=emnz3xCV29o&t=136s&pp=ygUhc2hvcnRlbiB5b3VyIHVybCB1c2luZyBiaXRseSBsaW5r"
+                class="text-sky-700"
+              >
+                <u>tutorial</u>
+              </a>
+            </i>
           </span>
-          <input
-            name="venue"
-            id="venue"
-            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
-            value="bit.ly/3XRTs"
-          />
         </label>
-        <label class="block my-4">
-          <span class="block text-sm font-medium text-slate-500">
-            Address (optional)
-          </span>
-          <input
-            name="address"
-            id="address"
-            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
-            value="bit.ly/3XRTs"
-          />
-        </label>
-        <label class="block my-4">
+        <label class="block my-4 background-image-keyword">
           <span class="block text-sm font-medium text-slate-500">
             Background Image Keyword
           </span>
@@ -136,49 +161,61 @@
             class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
             value="an african woman nurturing a baby"
           />
+          <span class="text-sky-600 text-xs">
+            <b>Hint:</b>
+            <i> Tweak keyword to get the kinds of images you want </i>
+          </span>
         </label>
-        <hr />
+        <button
+          id="bgImageBtn"
+          class="px-4 py-2.5 text-sm text-slate-600 font-semibold rounded-full border border-slate-200 hover:text-white hover:bg-slate-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-slate-600 focus:ring-offset-2 mb-3"
+        >
+          Get Background
+        </button>
         <div class="my-3">
+          <p class="text-sm font-medium text-slate-500">
+            Choose your desired background image
+          </p>
           <div class="flex gap-2 mt-2 flex-wrap">
             <img
               id="bg-option1"
               src="https://images.pexels.com/photos/7328448/pexels-photo-7328448.jpeg"
-              style="width: 140px; height: 140px"
+              style="width: 100px; height: 100px"
               class="bg-option rounded-lg"
               alt=""
             />
             <img
               id="bg-option2"
               src="https://images.pexels.com/photos/11369188/pexels-photo-11369188.jpeg"
-              style="width: 140px; height: 140px"
+              style="width: 100px; height: 100px"
               class="bg-option rounded-lg"
               alt=""
             />
             <img
               id="bg-option3"
               src="https://images.pexels.com/photos/6393346/pexels-photo-6393346.jpeg"
-              style="width: 140px; height: 140px"
+              style="width: 100px; height: 100px"
               class="bg-option rounded-lg"
               alt=""
             />
             <img
               id="bg-option4"
               src="https://images.pexels.com/photos/11369400/pexels-photo-11369400.jpeg"
-              style="width: 140px; height: 140px"
+              style="width: 100px; height: 100px"
               class="bg-option rounded-lg"
               alt=""
             />
             <img
               id="bg-option5"
               src="https://images.pexels.com/photos/11369179/pexels-photo-11369179.jpeg"
-              style="width: 140px; height: 140px"
+              style="width: 100px; height: 100px"
               class="bg-option rounded-lg"
               alt=""
             />
             <img
               id="bg-option6"
               src="https://images.pexels.com/photos/6393333/pexels-photo-6393333.jpeg"
-              style="width: 140px; height: 140px"
+              style="width: 100px; height: 100px"
               class="bg-option rounded-lg"
               alt=""
             />
@@ -186,16 +223,10 @@
         </div>
         <hr />
         <button
-          id="bgImageBtn"
-          class="px-4 py-2.5 text-sm text-slate-600 font-semibold rounded-full border border-slate-200 hover:text-white hover:bg-slate-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-slate-600 focus:ring-offset-2 mr-3 my-3"
-        >
-          Get Background
-        </button>
-        <button
           id="createAdBtn"
           class="px-4 py-2.5 text-sm bg-slate-600 text-white font-semibold rounded-full border border-slate-200 hover:text-slate-600 hover:bg-white hover:border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:ring-offset-2 mt-3"
         >
-          Save Changes
+          Create Poster
         </button>
       </form>
 
@@ -282,13 +313,13 @@
             </svg>
             <h3
               id="ad-theme"
-              class="mt-12 text-white font-black leading-none"
+              class="mt-12 text-white font-bold leading-none max-w-sm h-6 overflow-hidden"
             ></h3>
             <h1
               id="ad-title"
-              class="text-5xl font-black text-red-400 mt-2.5 leading-none"
+              class="text-4xl font-black text-red-400 leading-none max-w-sm h-40 overflow-hidden"
             ></h1>
-            <div class="bg-white px-4 pb-4 mt-16 rounded-tl-3xl rounded-br-3xl">
+            <div class="bg-white/90 px-4 pb-3 rounded-tl-3xl rounded-br-3xl">
               <p class="font-semibold">Speaker(s):</p>
               <h3 id="ad-speaker" class="text-lg"></h3>
             </div>
@@ -319,11 +350,9 @@
                   </g>
                 </svg>
                 <p class="text-sm leading-1">
-                  <span class="text-white font-bold">RCCG MorningStar</span>
+                  <span class="text-white font-bold" id="ad-venue"></span>
                   <br />
-                  <span class="text-orange-500 italic"
-                    >280 Lanark Road West, EH14 5RU</span
-                  >
+                  <span class="text-orange-500 italic" id="ad-address"></span>
                 </p>
               </div>
               <div class="flex gap-2 w-2/4 p-2 pr-6 justify-end">

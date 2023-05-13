@@ -15,8 +15,6 @@ const adVenue = document.getElementById("ad-venue");
 const address = document.getElementById("address");
 const adAddress = document.getElementById("ad-address");
 
-const imageKeyword = document.getElementById("imageKeyword");
-
 const downloadBtn = document.getElementById("downloadBtn");
 const bgImageBtn = document.getElementById("bgImageBtn");
 const createAdBtn = document.getElementById("createAdBtn");
@@ -31,16 +29,22 @@ for (let i = 0; i < bgOptions.length; i++) {
   });
 }
 
+renderDefaultDesign();
+
+createAdBtn.addEventListener("click", createAd);
+bgImageBtn.addEventListener("click", loadBackgroundImage);
+downloadBtn.addEventListener("click", download);
+
 async function loadBackgroundImage(e) {
   e.preventDefault();
+  const query = document.getElementById("imageKeyword").value;
   const response = await fetch(
-    `https://api.pexels.com/v1/search?query=${imageKeyword.value}&per_page=6`,
+    `https://api.pexels.com/v1/search?query=${query}&per_page=6`,
     {
       mode: "cors",
       headers: {
         Authorization:
           "YbKbHliM78OUoibK1Yyw57CFzT66yFoSDRXXZAQos9XHQ9XDoVeHNgY8",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
     }
   );
@@ -59,16 +63,22 @@ function setAdBackground(imgUrl) {
   adContainer.style.backgroundPosition = "center";
 }
 
+function trimString(str, length) {
+  return str.substring(0, length);
+}
+
 function populateAdFields() {
-  adTitle.innerText = title.value;
-  adTheme.innerText = theme.value;
-  adSpeaker.innerText = speaker.value;
-  adDate.innerText = date.value;
-  adTime.innerText = time.value;
+  adTheme.innerText = trimString(theme.value, 36);
+  adTitle.innerText = title.value = trimString(title.value, 44);
+  adSpeaker.innerText = trimString(speaker.value, 40);
+  adDate.innerText = trimString(date.value, 18);
+  adTime.innerText = trimString(time.value, 16);
+  adAddress.innerText = trimString(address.value, 40);
+  adVenue.innerText = trimString(venue.value, 20);
 
   if (registration.value) {
     registrationContainer.style.display = "block";
-    adRegistration.innerText = registration.value;
+    adRegistration.innerText = trimString(registration.value, 18);
   } else {
     registrationContainer.style.display = "none";
   }
@@ -83,10 +93,7 @@ function createAd(e) {
   populateAdFields();
 }
 
-createAdBtn.addEventListener("click", createAd);
-bgImageBtn.addEventListener("click", loadBackgroundImage);
-
-function capture() {
+function download() {
   html2canvas(document.querySelector("#capture"), {
     useCORS: true,
     width: 500,
@@ -104,6 +111,3 @@ function capture() {
       canvas.remove();
     });
 }
-
-renderDefaultDesign();
-downloadBtn.addEventListener("click", capture);
